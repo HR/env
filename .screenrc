@@ -1,0 +1,48 @@
+# #################################
+# GNU Screen config
+# #################################
+
+# Use default shell
+shell -${SHELL}
+
+
+# make sure to use utf-8 so that my vim will work properly (unicode
+# invisible characters)
+defutf8 on
+
+# Enable 256 color term
+term xterm-256color
+
+# Allow bold colors - necessary for some reason
+attrcolor b ".I"
+
+# Cache 30000 lines for scroll back
+defscrollback 30000
+
+# Disable splash screen
+startup_message off
+
+# Window title
+#windowlist string "%4n %h%=%f"
+
+# Detach messages
+pow_detach_msg "Screen session \${STY} for \${LOGNAME} \$:cr:\$:nl:ended"
+
+# Always show a status line in the window footer
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string '%{= kd} %{= kd}%-w%{= kr}[%{= kW}%n %t%{= kr}]%{= kd}%+w %-= %{kG} %H%{kW}|%{kY}%101`%{kW}|%D %M %d %Y%{= kc} %C%A%{-}'
+hardstatus string '%{= kd} %{= kd}%-w%{= kr}[%{= kW}%n %t%{= kr}]%{= kd}%+w %-= %{kG} %H%{kW} | %D %M %d %Y%{= kc} %C%A%{-}'
+
+# Autodetach session on hangup instead of
+# terminating screen completely
+autodetach on
+
+# Turn off the splash screen
+startup_message off
+
+# set log on all windows
+#deflog on
+
+screen
+screen $SHELL -c 'screen -X caption always "%{= kd}%{kY}$STY"'

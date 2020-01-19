@@ -1,4 +1,6 @@
-"Vim config
+" """""""""""""""""""""""""""""""""
+" Vim config
+" """""""""""""""""""""""""""""""""
 
 syntax on           "turns on syntax highlighting
 set number          "turns on line numbering
