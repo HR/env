@@ -1,2 +1,3 @@
-# env
-My dev env
+# My env
+
+My macOS environment.

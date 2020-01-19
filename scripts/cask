@@ -1,0 +1,37 @@
+# #################################
+# Brew cask formulaes
+# #################################
+
+# Essentials
+osxfuse
+spectacle
+iterm2
+xquartz
+java
+
+# Tools
+atom
+docker
+kitematic
+postman
+sourcetree
+sublime-text
+appcleaner
+
+# Quicklook extensions
+qlcolorcode
+qlimagesize
+qlmarkdown
+qlprettypatch
+qlstephen
+quicklook-csv
+quicklook-json
+webpquicklook
+
+# Apps
+transmission
+firefox
+spotify
+typora
+vlc
+virtualbox

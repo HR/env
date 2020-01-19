@@ -1,0 +1,44 @@
+[alias]
+	i = init
+	s = status
+	p = push
+	a = add
+	c = commit -am
+	b = branch
+
+	ra = remote add
+	po = push origin
+	co = checkout
+
+	pom = push origin master
+	puom = push -u origin master
+
+  ignore = !git update-index --assume-unchanged
+  unignore = !git update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep ^[a-z]
+
+  rmignored = ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached
+
+[user]
+	name = Bibs
+	email = h@rehman.email
+	signingkey = 42F14DEA0E510C11D98C184F248D9ABD1E365247
+
+[push]
+	default = simple
+
+[core]
+	excludesfile = $HOME/.gitignore_global
+	ignorecase = false
+
+[url "https://github.com/"]
+	insteadOf = gh:
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[gpg]
+	program = gpg

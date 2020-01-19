@@ -1,0 +1,25 @@
+# #################################
+# Brew formulaes
+# #################################
+
+# Essentials
+coreutils
+openssl
+tree
+zsh
+zsh-completions
+tmux
+git
+imagemagick
+
+# Tools
+yarn
+httpie
+nmap
+android-sdk
+
+# Languages/Frameworks
+nvm
+python
+rbenv
+go

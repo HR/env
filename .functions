@@ -1,0 +1,52 @@
+#!/bin/sh
+# #################################
+# Shell Functions
+# #################################
+
+# Automaticaly activate virtual env if venv dir present
+function cd {
+    builtin cd "$@";
+    if [ -d "venv" ] ; then
+        echo "Activating venv virtualenv...";
+        source venv/bin/activate;
+    fi
+}
+
+# Make dir and cd into it
+function mcd () {
+    mkdir -p $1
+    cd $1
+}
+
+# FileSearch
+function f() { find . -iname "*$1*" ${@:2} }
+
+# File removal by name
+function frm() { find . -iname "*$1*"  -print0 | xargs -0 rm -r }
+
+# File content search
+function fr() { grep "$1" ${@:2} -R . }
+
+# add commit and push all change instantly
+function gacop() {
+  git add -A
+  git commit -am $1
+  git push
+}
+
+# remove git tag locally and remotely
+function girmtag() {
+ git tag -d $1
+ git push origin :refs/tags/$1
+}
+
+# show tree view of the current or passed directory like the tree command on linux
+function tree() {
+  dir=${1:-\.}
+  find "$dir" -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+}
+
+# Delete time machine backups
+function deletebackups() {
+	for i in $(tmutil listlocalsnapshots /Volumes/Macintosh\ HD); do echo $i | sed 's/com.apple.TimeMachine.//g' | xargs tmutil deletelocalsnapshots;done
+}

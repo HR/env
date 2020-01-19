@@ -1,0 +1,5 @@
+#!/bin/sh
+# macOS config
+
+# Show hidden files by default in the Finder
+defaults write com.apple.finder AppleShowAllFiles -bool TRUE

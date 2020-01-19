@@ -1,0 +1,27 @@
+#!/bin/sh
+# #################################
+# Shell Exports
+# #################################
+
+# GNU PGP
+export GPG_TTY=$(tty)
+export NODE_ENV="development"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+# Go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+# Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_SDK=$ANDROID_HOME
+export ANDROID_HVPROTO=ddm
+
+# Default editor
+export EDITOR="atom"
+# PATH
+export PATH=/usr/local/sbin:$HOME/bin:/usr/local/opt/python/libexec/bin:$HOME/.rbenv/bin:$GOROOT/bin:$GOPATH/bin:$ANDROID_HOME/platform-tools/:$PATH
+
+# This should be the last line of the file
+# For local changes
+# Don't make edits below this
+[ -f ".exports.local" ] && source ".exports.local"
