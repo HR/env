@@ -11,3 +11,8 @@ Installation
 2. Create symbolic links for the configurations
 
     ./init/link.sh
+
+
+To do
+------------
+- [-] Gems

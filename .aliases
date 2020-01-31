@@ -25,13 +25,6 @@ alias bu="brew update"
 alias bi="brew install"
 alias be="bundle exec"
 
-alias sourcetree='open -a SourceTree'
-
-# Scripts
-# alias clean="$HOME/Documents/s/clean_sys.sh"
-# alias fig="$HOME/Documents/s/find_g.sh"
-# alias fh="$HOME/Documents/s/find_h.sh"
-
 # Remote servers
 alias pi="ssh ubuntu@192.168.0.3"
 alias bibs="ssh bibs@192.168.0.3"
@@ -46,6 +39,8 @@ unalias git
 alias git="/usr/local/bin/git"
 alias g='git'
 
+alias stree='open -a SourceTree'
+
 # ---------------------------------
 # Docker
 # ---------------------------------
@@ -56,7 +51,6 @@ alias dkrclean="docker rmi $(docker images --filter \"dangling=true\" -q --no-tr
 # ---------------------------------
 # NPM
 # ---------------------------------
-
 
 alias nr='npm run'
 alias ni='npm install'
