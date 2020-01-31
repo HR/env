@@ -5,7 +5,7 @@
 # #################################
 
 # Make all scripts executable
-chmod u+x *.sh
+chmod u+x init/*.sh scripts/*.sh
 
 ./install.sh
 

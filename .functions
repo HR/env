@@ -6,8 +6,8 @@
 # Automaticaly activate virtual env if venv dir present
 function cd {
     builtin cd "$@";
-    if [ -d "venv" ] ; then
-        echo "Activating venv virtualenv...";
+    if [ -d 'venv' ] ; then
+        echo 'Activating venv virtualenv...';
         source venv/bin/activate;
     fi
 }
@@ -18,26 +18,30 @@ function mcd () {
     cd $1
 }
 
-# FileSearch
-function f() { find . -iname "*$1*" ${@:2} }
-
-# File removal by name
-function frm() { find . -iname "*$1*"  -print0 | xargs -0 rm -r }
-
-# File content search
-function fr() { grep "$1" ${@:2} -R . }
-
-# add commit and push all change instantly
-function gacop() {
-  git add -A
-  git commit -am $1
-  git push
+# Kills a daemon
+function killd () {
+  for i in $(launchctl list | grep -i -o "com.$1.*"); do launchctl remove $i; done
 }
 
-# remove git tag locally and remotely
-function girmtag() {
- git tag -d $1
- git push origin :refs/tags/$1
+# File search here
+function f() {
+  find . -iname "*$1*" ${@:2}
+}
+
+# File search global
+function fg() {
+  find / -iname "*$1*" ${@:2} 2>&1 | grep -v -e 'Permission\sdenied' -e 'Not\sa\sdirectory' >&2
+}
+
+# File removal by name
+function frm() {
+  find . -iname "*$1*"  -print0 | xargs -0 rm -r
+  # find ~ -iname "*$1*" | grep -v -e 'Permission\sdenied' -e 'Not\sa\sdirectory' | sed -e 's/ /\\\ /g' | xargs rm -rf
+}
+
+# File content search
+function fr() {
+  grep "$1" ${@:2} -R .
 }
 
 # show tree view of the current or passed directory like the tree command on linux
@@ -49,4 +53,21 @@ function tree() {
 # Delete time machine backups
 function deletebackups() {
 	for i in $(tmutil listlocalsnapshots /Volumes/Macintosh\ HD); do echo $i | sed 's/com.apple.TimeMachine.//g' | xargs tmutil deletelocalsnapshots;done
+}
+
+# ---------------------------------
+# Git
+# ---------------------------------
+
+# Git add commit and push all change instantly
+function gacop() {
+  git add -A
+  git commit -am $1
+  git push
+}
+
+# remove git tag locally and remotely
+function grmtag() {
+ git tag -d $1
+ git push origin :refs/tags/$1
 }
