@@ -87,3 +87,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Source zsh env
 source $HOME/.rc
+
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

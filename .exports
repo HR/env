@@ -3,17 +3,20 @@
 # Shell Exports
 # #################################
 
-# Default editor
-export EDITOR="atom"
-
 # The env
 export ENV_HOME="$HOME/.env"
+
+# Make the terminal pretty
+export CLICOLOR=1
+
+# Default editor
+export EDITOR="atom"
 
 # Brew
 PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 
-# Python
-# PATH=$(brew --prefix python)/libexec/bin
+# Use Python 3
+PATH=$(brew --prefix python)/libexec/bin:$PATH
 
 # GNU PGP
 export GPG_TTY=$(tty)

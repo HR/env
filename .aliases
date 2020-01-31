@@ -63,8 +63,6 @@ alias nu='for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2 |
 # Python
 # ---------------------------------
 
-unalias pip
-alias pip="pip3"
 # Pip upgrade all packages
 alias pipu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 # Create a virtualenv with python3 as the interpreter
