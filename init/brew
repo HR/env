@@ -9,8 +9,9 @@ tree
 zsh
 zsh-completions
 tmux
-git
+hub
 imagemagick
+wget
 
 # Tools
 yarn

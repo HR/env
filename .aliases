@@ -27,26 +27,23 @@ alias be="bundle exec"
 
 # Remote servers
 alias pi="ssh ubuntu@192.168.0.3"
-alias bibs="ssh bibs@192.168.0.3"
+alias mini="ssh bibs@192.168.0.6"
 
+
+# ---------------------------------
+# tmux
+# ---------------------------------
+
+alias t='tmux'
 
 # ---------------------------------
 # Git
 # ---------------------------------
 
-unalias git
-# Use brew git version
-alias git="/usr/local/bin/git"
+# See .gitconfig for more
 alias g='git'
-
+# Open with sourcetree
 alias stree='open -a SourceTree'
-
-# ---------------------------------
-# Docker
-# ---------------------------------
-
-alias dkr="docker"
-alias dkrclean="docker rmi $(docker images --filter \"dangling=true\" -q --no-trunc)"
 
 # ---------------------------------
 # NPM
