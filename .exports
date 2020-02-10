@@ -20,10 +20,10 @@ PATH=$(brew --prefix python)/libexec/bin:$PATH
 
 # GNU PGP
 export GPG_TTY=$(tty)
-export NODE_ENV="development"
 
-# NVM
+# Node
 export NVM_DIR="$HOME/.nvm"
+export NODE_ENV="development"
 
 # rbenv
 PATH=$HOME/.rbenv/bin:$PATH
