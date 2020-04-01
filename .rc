@@ -3,9 +3,9 @@
 # Shell Environment
 # #################################
 
-source .exports
-source .aliases
-source .functions
+source $HOME/.exports
+source $HOME/.aliases
+source $HOME/.functions
 
 # rbenv
 if hash rbenv 2>/dev/null; then
