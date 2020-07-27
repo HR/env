@@ -4,9 +4,10 @@
 	p = push
 	a = add
 	c = commit -am
+	cm = commit -m
 	b = branch
 
-	save = stash && stash apply
+	save = "!sh -c 'git stash && git stash apply'"
 
 	ra = remote add
 	po = push origin
@@ -22,7 +23,7 @@
   rmignored = ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached
 
 [user]
-	name = Bibs
+	name = HR
 	email = h@rehman.email
 	signingkey = 42F14DEA0E510C11D98C184F248D9ABD1E365247
 
@@ -30,7 +31,7 @@
 	default = simple
 
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = /Users/Habib/.gitignore_global
 	ignorecase = false
 
 [url "https://github.com/"]
@@ -50,3 +51,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/habib/.stCommitMsg

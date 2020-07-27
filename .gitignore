@@ -1,2 +1,5 @@
 # Local configuration files
 *.local
+
+# Mac stuff
+.DS_Store
