@@ -66,5 +66,5 @@ alias nu='for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2 |
 alias pipu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 # Create a virtualenv with python3 as the interpreter
 # I usually name my virtualenv .venv
-alias venv='virtualenv -p /usr/local/bin/python3 .venv'
+alias virtualenv='pyenv-virtualenv'
 alias vac='source .venv/bin/activate'

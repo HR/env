@@ -1,32 +1,20 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# If install zplug
+# export ZPLUG_HOME=$(brew --prefix zplug)
+# source $ZPLUG_HOME/init.zsh
 
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+SPACESHIP_GIT_SYMBOL="🔱  "
 ZSH_THEME="spaceship"
 
-# SPACESHIP_PROMPT_ORDER=(
-#   exec_time
-#   user     # before prompt char
-#   host     #
-#   dir
-#   git
-#   pyenv
-#   char
-# )
 
-SPACESHIP_GIT_SYMBOL="🔱"
-
-SPACESHIP_PYENV_SYMBOL=""
-SPACESHIP_PYENV_PREFIX="("
-SPACESHIP_PYENV_SUFFIX=")"
-SPACESHIP_PYENV_COLOR="yellow"
-
+# Add env.sh
+# . ~/s/env.sh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -69,13 +57,17 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize github npm pip python brew osx pyenv docker screen)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git colored-man colorize github vagrant npm pip python brew osx zsh-syntax-highlighting pyenv docker)
 
 # User configuration
+# export PATH="$HOME/.nvm/versions/node/v5.4.1/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Android/sdk/platform-tools:/opt/X11/bin:/Library/TeX/texbin"
+export PATH="/usr/local/sbin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Oh my zsh
+source $ZSH/oh-my-zsh.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -91,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -101,9 +93,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Use atom for editing config files
+# alias zshconfig="atom ~/.zshrc"
+# alias envconfig="atom ~/s/env.sh"
 
-# Source zsh env
-source $HOME/.rc
+# Source zshenv
+# . ~/.zshenv
+source $HOME/.env
+source $HOME/GitHub/term/term.sh # > /dev/null
 
-# iterm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
