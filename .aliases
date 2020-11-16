@@ -27,8 +27,8 @@ alias bi="brew install"
 alias be="bundle exec"
 
 # Remote servers
-alias pi="ssh ubuntu@10.0.0.3"
-alias mini="ssh bibs@10.0.0.6"
+alias pi="ssh ubuntu@192.168.0.3"
+alias mini="ssh bibs@192.168.0.6"
 
 
 # ---------------------------------
