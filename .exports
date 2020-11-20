@@ -27,7 +27,11 @@ PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 
 # Pyenv
 export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk
-export MACOSX_DEPLOYMENT_TARGET=10.1
+export MACOSX_DEPLOYMENT_TARGET=11.0
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/lib"
+export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
+export CPPFLAGS="-I$(xcrun --show-sdk-path)/usr/lib"
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export PYENV_ROOT="$HOME/.pyenv"
 PATH="$PYENV_ROOT/bin:$PATH"
 
@@ -48,8 +52,8 @@ PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 
 # LLVM
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="$LDFLAGS -L/usr/local/opt/llvm/lib"
+export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/llvm/include"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Make the ./scripts accessible
