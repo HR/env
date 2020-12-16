@@ -26,7 +26,7 @@ PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 # PATH=$(brew --prefix python)/libexec/bin:$PATH
 
 # Pyenv
-export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk
+export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 export MACOSX_DEPLOYMENT_TARGET=11.0
 export CFLAGS="-I$(xcrun --show-sdk-path)/usr/lib"
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"

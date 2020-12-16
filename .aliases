@@ -27,9 +27,11 @@ alias bi="brew install"
 alias be="bundle exec"
 
 # Remote servers
-alias pi="ssh ubuntu@192.168.0.3"
-alias mini="ssh bibs@192.168.0.6"
+alias pi="ssh ubuntu@ubuntu.lan"
+alias mini="ssh bibs@MacMini.local"
+alias syncopy="ssh syncopy@syncopy.eastus2.cloudapp.azure.com -i ~/.ssh/syncopy.pem"
 
+alias aax2m4b="$HOME/GitHub/AAXtoMP3/AAXtoMP3 -e:m4b -s"
 
 # ---------------------------------
 # tmux
