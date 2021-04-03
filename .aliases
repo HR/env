@@ -23,26 +23,36 @@ alias du="du -h -c"
 alias yank="pbcopy"
 alias myip="curl http://ipecho.net/plain; echo"
 
-alias bu="brew update"
-alias bi="brew install"
-alias be="bundle exec"
 
 # Edit .env
 alias ee="code $ENV_HOME"
 alias se="source $ENV_HOME/.rc"
 
-# Remote servers
+
+# ---------------------------------
+# terminal
+# ---------------------------------
+
+alias term='osascript $ENV_HOME/scripts/iterm2.scpt cd $(pwd)'
+alias terme='osascript $ENV_HOME/scripts/iterm2.scpt'
+alias termq='open . -a iterm && exit'
+
+alias t='tmux'
+
+# ---------------------------------
+# brew
+# ---------------------------------
+
+alias bu="brew update"
+alias bi="brew install"
+
+# ---------------------------------
+# ssh remotes
+# ---------------------------------
+
 alias pi="ssh ubuntu@pi.lan"
 alias mini="ssh bibs@MacMini.local"
 alias syncopy="ssh syncopy@syncopy.eastus2.cloudapp.azure.com -i ~/.ssh/syncopy.pem"
-
-alias aax2m4b="$HOME/GitHub/AAXtoMP3/AAXtoMP3 -e:m4b -s"
-
-# ---------------------------------
-# tmux
-# ---------------------------------
-
-alias t='tmux'
 
 # ---------------------------------
 # Git
@@ -75,3 +85,10 @@ alias pipu="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip ins
 # I usually name my virtualenv .venv
 alias virtualenv='pyenv-virtualenv'
 alias vac='source .venv/bin/activate'
+
+# ---------------------------------
+# Audiobook utils
+# ---------------------------------
+
+alias aax2m4b="$HOME/GitHub/AAXtoMP3/AAXtoMP3 -e:m4b -s"
+alias m4b-tool='docker run -it --rm -u $(id -u):$(id -g) -v "$(pwd)":/mnt m4b-tool'

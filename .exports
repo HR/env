@@ -10,7 +10,7 @@ export ENV_HOME="$HOME/.env"
 export CLICOLOR=1
 
 # Default editor
-export EDITOR="atom"
+export EDITOR="code"
 
 # Android
 export ANDROID_HOME="/usr/local/share/android-sdk"
