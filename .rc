@@ -14,8 +14,9 @@ if hash rbenv 2>/dev/null; then
 fi
 
 # NVM
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && NVM_SYMLINK_CURRENT="true"
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -24,9 +25,10 @@ fi
 # source $HOME/GitHub/term/term.sh # > /dev/null
 
 # Pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-if which pyenv-virtualenv-init > /dev/null; then
-  eval "$(pyenv virtualenv-init -)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+  # If Pyenv is installed with Homebrew
+  # eval "$(pyenv init --path)" > /dev/null 2>&1
+  
+  # eval "$(pyenv init -)"
+  # eval "$(pyenv virtualenv-init -)"
+# fi
