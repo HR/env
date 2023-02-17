@@ -5,21 +5,21 @@
 
 # Automaticaly activate virtual env if venv dir present
 function cd {
-    builtin cd "$@";
-    if [ -d 'venv' ] ; then
-        echo 'Activating venv virtualenv...';
-        source venv/bin/activate;
-    fi
+  builtin cd "$@"
+  if [ -d 'venv' ]; then
+    echo 'Activating venv virtualenv...'
+    source venv/bin/activate
+  fi
 }
 
 # Make dir and cd into it
-function mcd () {
-    mkdir -p $1
-    cd $1
+function mcd() {
+  mkdir -p $1
+  cd $1
 }
 
 # Kills a daemon
-function killd () {
+function killd() {
   for i in $(launchctl list | grep -i -o "com.$1.*"); do launchctl remove $i; done
 }
 
@@ -35,7 +35,7 @@ function fg() {
 
 # File removal by name
 function frm() {
-  find . -iname "*$1*"  -print0 | xargs -0 rm -r
+  find . -iname "*$1*" -print0 | xargs -0 rm -r
   # find ~ -iname "*$1*" | grep -v -e 'Permission\sdenied' -e 'Not\sa\sdirectory' | sed -e 's/ /\\\ /g' | xargs rm -rf
 }
 
@@ -52,7 +52,7 @@ function tree() {
 
 # Delete time machine backups
 function deletebackups() {
-	for i in $(tmutil listlocalsnapshots /Volumes/Macintosh\ HD); do echo $i | sed 's/com.apple.TimeMachine.//g' | xargs tmutil deletelocalsnapshots;done
+  for i in $(tmutil listlocalsnapshots /Volumes/Macintosh\ HD); do echo $i | sed 's/com.apple.TimeMachine.//g' | xargs tmutil deletelocalsnapshots; done
 }
 
 # ---------------------------------
@@ -68,6 +68,10 @@ function gacop() {
 
 # remove git tag locally and remotely
 function grmtag() {
- git tag -d $1
- git push origin :refs/tags/$1
+  git tag -d $1
+  git push origin :refs/tags/$1
+}
+
+function grmbranches() {
+  git branch | grep "$1" | xargs git branch -D
 }

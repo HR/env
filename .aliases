@@ -16,7 +16,7 @@ alias '?=man'
 alias ls='ls -A'
 alias ps-grep='ps aux | grep'
 alias fhere="find . -name "
-alias ps="ps auxf"
+alias ps="ps aux"
 alias mkdir="mkdir -pv"
 alias top="htop"
 alias du="du -h -c"
@@ -61,6 +61,7 @@ alias syncopy="ssh syncopy@syncopy.eastus2.cloudapp.azure.com -i ~/.ssh/syncopy.
 # See .gitconfig for more
 alias g='git'
 alias gs='git status'
+alias gp='git pull'
 # Open with sourcetree
 alias stree='open -a SourceTree'
 

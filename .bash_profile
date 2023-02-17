@@ -1,2 +1,3 @@
 #!/bin/sh
-source .rc
+# source .rc
+export NODE_BINARY=$(which node)

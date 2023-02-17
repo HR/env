@@ -1,7 +1,8 @@
 [alias]
 	i = init
 	s = status
-	p = push
+	p = pull
+	pu = push
 	a = add
 	c = commit -am
 	cm = commit -m
@@ -24,14 +25,14 @@
 
 [user]
 	name = HR
-	email = h@rehman.email
+	email = git@HabibRehman.com
 	signingkey = 42F14DEA0E510C11D98C184F248D9ABD1E365247
 
 [push]
 	default = simple
 
 [core]
-	excludesfile = /Users/Habib/.gitignore_global
+	excludesfile = /Users/habib/.gitignore_global
 	ignorecase = false
 
 [url "https://github.com/"]
@@ -49,7 +50,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = $HOME/.stCommitMsg

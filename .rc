@@ -8,18 +8,18 @@ source $HOME/.aliases
 source $HOME/.functions
 
 # rbenv
-if hash rbenv 2>/dev/null; then
-  source "$(brew --prefix rbenv)/completions/rbenv.zsh"
-  eval "$(rbenv init -)"
-fi
+# if hash rbenv 2>/dev/null; then
+#   source "$(brew --prefix rbenv)/completions/rbenv.zsh"
+#   eval "$(rbenv init -)"
+# fi
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+#[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # External scripts
 # source $HOME/GitHub/term/term.sh # > /dev/null
