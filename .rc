@@ -25,10 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 # source $HOME/GitHub/term/term.sh # > /dev/null
 
 # Pyenv
-# if command -v pyenv 1>/dev/null 2>&1; then
-  # If Pyenv is installed with Homebrew
-  # eval "$(pyenv init --path)" > /dev/null 2>&1
-  
-  # eval "$(pyenv init -)"
-  # eval "$(pyenv virtualenv-init -)"
-# fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)" > /dev/null 2>&1
+fi
