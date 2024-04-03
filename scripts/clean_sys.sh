@@ -5,17 +5,17 @@
 
 sudo rm -rf ~/.Trash/*
 brew update
-brew upgrade
+arch -arm64 brew upgrade
 brew cleanup
 # Ruby
 gem cleanup
 # Node
 npm cache clean --force
-# PHP
-composer clearcache
-
-# Atom
-rm -rf ~/.atom/.apm
+yarn cache clean
+# Python
+pip3 cache purge
+# macOS
+# sudo rm -rf /Library/Caches/*
 
 # Time Machine
 # sudo tmutil disablelocal
