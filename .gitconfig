@@ -14,8 +14,8 @@
 	po = push origin
 	co = checkout
 
-	pom = push origin master
-	puom = push -u origin master
+	pom = push origin main
+	puom = push -u origin main
 
   ignore = !git update-index --assume-unchanged
   unignore = !git update-index --no-assume-unchanged
@@ -54,3 +54,5 @@
 	trustExitCode = true
 [commit]
 	template = $HOME/.stCommitMsg
+[init]
+	defaultBranch = main
