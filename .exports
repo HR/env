@@ -71,3 +71,4 @@ PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 # Make the ./scripts accessible
 export PATH=$ENV_HOME/scripts:$PATH
 
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"

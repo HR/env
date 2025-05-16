@@ -51,6 +51,7 @@ alias bi="brew install"
 # ---------------------------------
 
 alias pi="ssh raspberry@pi.local"
+alias pic="ssh ubuntu@pi.local"
 alias mini="ssh bibs@MacMini.local"
 alias syncopy="ssh syncopy@syncopy.eastus2.cloudapp.azure.com -i ~/.ssh/syncopy.pem"
 
